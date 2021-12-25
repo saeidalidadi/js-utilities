@@ -1,0 +1,11 @@
+{
+  "name": "allways-js-utilities",
+  "version": "1.0.1",
+  "description": "My utilities for DRY coding on javascript land",
+  "main": "./dist/index.js",
+  "author": "Saeid Alidadi",
+  "engines": {
+    "node": ">=4"
+  },
+  "license": "MIT"
+}
