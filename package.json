@@ -1,6 +1,6 @@
 {
   "name": "allways-js-utilities",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "My utilities for DRY coding on javascript land",
   "main": "./dist/index.js",
   "author": "Saeid Alidadi",
