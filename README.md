@@ -6,7 +6,7 @@ All string manipulations
  This function will concat your base URL to any path you want without any fear of double slashes `//`
 
  ```javascript
- import { combineURLs } from "allways-js-utilities";
+ import { combineURLs } from "onstage-js-utils";
 
  combineURLs("https://example.com/", "/users") // output: https://example.com/users
 
@@ -18,7 +18,7 @@ All string manipulations
  Locale time of the user's browser
 
  ```javascript
- import { getLocale } from "allways-js-utilities";
+ import { getLocale } from "onstage-js-utils";
 
  getLocale() // en-US
 
@@ -30,5 +30,6 @@ All string manipulations
  Find users's browser time zone
 
  ```javascript
+ import { getTimeZone } from "onstage-js-utils";
  getTimeZone() // Canada/Central
  ```
