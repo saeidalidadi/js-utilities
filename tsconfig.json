@@ -8,6 +8,7 @@
         "esModuleInterop": true,
         "outDir": "./dist",
         "rootDir": "./src",
-        "lib": ["ES2015"]
+        "lib": ["ES2015"],
+        "allowJs": false
     }
 }

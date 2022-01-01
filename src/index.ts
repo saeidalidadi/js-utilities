@@ -1,8 +1,8 @@
 /**
  * Concat URI parts without fear of slashes
- * @param {string}
- * @param {string}
- * @returns {string}
+ * @param {string} baseURL - like "http://example.com/"
+ * @param {string} relativeURL - like "/users"
+ * @returns {string} url - combined URL
  */
 
 export const combineURLs = (baseURL: string, relativeURL: string): string => {
@@ -29,8 +29,8 @@ export const resolvedOptions = () => {
 }
 
 /**
- * 
- * @returns {string} locale code like en-US
+ * Find user's browser locale code
+ * @returns {string} locale - code like en-US
  */
 export const getLocale = (): string => {
     const { locale } = resolvedOptions();
@@ -38,8 +38,8 @@ export const getLocale = (): string => {
 }
 
 /**
- * 
- * @returns {string} timeZone code like 'Canada/Central'
+ * Find users's browser time zone
+ * @returns {string} timeZone - like 'Canada/Central'
  */
 export const getTimeZone = (): string => {
     const { timeZone } = resolvedOptions();

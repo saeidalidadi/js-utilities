@@ -15,11 +15,20 @@ All string manipulations
 
  ### getLocale
 
- locale time of the user's browser
+ Locale time of the user's browser
 
  ```javascript
  import { getLocale } from "allways-js-utilities";
 
  getLocale() // en-US
 
+ ```
+
+
+ ### getTimeZone
+
+ Find users's browser time zone
+
+ ```javascript
+ getTimeZone() // Canada/Central
  ```
