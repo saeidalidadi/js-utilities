@@ -42,8 +42,8 @@ All string manipulations
 
  ```javascript
 
- import { seImageSource } from "onstage-js-utilities";
+ import { toImageSource } from "onstage-js-utilities";
 
- <img src={setImageSource(src || file)} />
+ <img src={toImageSource(src || file)} />
 
  ```
