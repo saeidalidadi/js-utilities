@@ -7,7 +7,7 @@
         "strict": true,
         "esModuleInterop": true,
         "outDir": "./dist",
-        "lib": ["ES2015"],
+        "lib": ["ES2015", "DOM"],
         "allowJs": false
     }
 }

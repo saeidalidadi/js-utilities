@@ -1,6 +1,6 @@
 {
   "name": "onstage-js-utils",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "My utilities for DRY coding on javascript land",
   "main": "./dist/index.js",
   "author": "Saeid Alidadi",
@@ -8,7 +8,8 @@
     "node": ">=4"
   },
   "repository": {
-    "url": "https://github.com/saeidalidadi/js-utilities"
+    "type": "git",
+    "url": "git+https://github.com/saeidalidadi/js-utilities.git"
   },
   "scripts": {
     "prebuild": "rimraf dist",

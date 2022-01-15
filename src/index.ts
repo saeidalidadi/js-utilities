@@ -45,3 +45,12 @@ export const getTimeZone = (): string => {
     const { timeZone } = resolvedOptions();
     return timeZone;
 }
+
+/**
+ * Set source of image tag 
+ * @param {string|object} src - the remote url or local image file
+ * @return {string}
+ */
+export const toImageSource = (src: string | File): string =>  {
+    return typeof src === 'string' ? src : URL.createObjectURL(src);
+}

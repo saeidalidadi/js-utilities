@@ -33,3 +33,17 @@ All string manipulations
  import { getTimeZone } from "onstage-js-utils";
  getTimeZone() // Canada/Central
  ```
+
+
+ ## DOM
+
+ Most of the time that we have an `img` tag there is a condition for getting `src` attribute from `url` or `blob` at the same
+ place.
+
+ ```javascript
+
+ import { seImageSource } from "onstage-js-utilities";
+
+ <img src={setImageSource(src || file)} />
+
+ ```
