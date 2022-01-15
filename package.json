@@ -1,6 +1,6 @@
 {
   "name": "onstage-js-utils",
-  "version": "1.4.1",
+  "version": "1.4.0",
   "description": "My utilities for DRY coding on javascript land",
   "main": "./dist/index.js",
   "author": "Saeid Alidadi",
@@ -13,7 +13,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "test": "jest",
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.build.json"
   },
   "license": "MIT",
   "devDependencies": {
