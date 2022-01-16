@@ -47,3 +47,23 @@ All string manipulations
  <img src={toImageSource(src || file)} />
 
  ```
+
+ ## Objects and Arrays
+
+This function compares two objects and returns the changes
+
+```javascript
+import { objectsDiff } from "onstage-js-utilities";
+
+const base = {
+    price: 99.9,
+    type: "product"
+}
+
+const changed = {
+    price: 99.9,
+    type: "orders"
+}
+
+objectsDiff(changed, base)
+// { type: "orders" }

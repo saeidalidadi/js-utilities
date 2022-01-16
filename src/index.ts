@@ -1,3 +1,7 @@
+import _transform from "lodash.transform";
+import _isEqual from "lodash.isequal";
+import _isObject from "lodash.isobject";
+
 /**
  * Concat URI parts without fear of slashes
  * @param {string} baseURL - like "http://example.com/"
@@ -48,9 +52,28 @@ export const getTimeZone = (): string => {
 
 /**
  * Set source of image tag 
- * @param {string|object} src - the remote url or local image file
+ * @param {string|Object} src - the remote url or local image file
  * @return {string}
  */
 export const toImageSource = (src: string | File): string =>  {
     return typeof src === 'string' ? src : URL.createObjectURL(src);
+}
+
+
+/**
+ * Deep diff between two objects, using lodash
+ * Original: https://gist.github.com/Yimiprod/7ee176597fef230d1451
+ * @param  {Object} object Object compared
+ * @param  {Object} base   Object to compare with
+ * @return {Object}        Return a new object who represent the diff
+ */
+ export const objectsDiff = (object: any, base: any) => {
+	function changes(object: any, base: any) {
+		return _transform(object, function(result: any, value, key) {
+			if (!_isEqual(value, base[key])) {
+				result[key] = (_isObject(value) && _isObject(base[key])) ? changes(value, base[key]) : value;
+			}
+		});
+	}
+	return changes(object, base);
 }
