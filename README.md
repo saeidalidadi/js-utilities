@@ -9,7 +9,8 @@ All string manipulations
  import { combineURLs } from "onstage-js-utils";
 
  combineURLs("https://example.com/", "/users") // output: https://example.com/users
-
+ combineURLs("https://example.com", "users")   // output: https://example.com/users
+ combineURLs("https://example.com", "//users") // output: https://example.com/users
  ```
 ## Localization
 
