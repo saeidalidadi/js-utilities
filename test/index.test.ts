@@ -13,6 +13,12 @@ describe("Strings", () => {
 
             expect(result).toEqual("http://test.pass/this/test");
         });
+
+        test('should return valid URL if there are slashes at the end and at the start of url parts', () => {
+            const result = combineURLs("http://test.pass/", "/this/test")
+
+            expect(result).toEqual("http://test.pass/this/test");
+        });
     });
 })
 
