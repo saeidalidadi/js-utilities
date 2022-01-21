@@ -2,3 +2,7 @@
 .gitignore
 src
 tsconfig.json
+tsconfig.build.json
+jest.config.js
+test
+.github
