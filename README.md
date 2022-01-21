@@ -14,7 +14,7 @@ yarn add onstage-js-utils
 
 All string manipulations
 
-- **combineURLs**
+- `combineURLs`
  This function will concat your base URL to any path you want without any fear of double slashes `//`
 
  ```javascript
@@ -26,7 +26,7 @@ All string manipulations
  ```
 ## Localization
 
- - **getLocale**
+ - `getLocale`
 
  Locale time of the user's browser
 
@@ -37,7 +37,7 @@ All string manipulations
 
  ```
 
- - **getTimeZone**
+ - `getTimeZone`
 
  Find users's browser time zone
 
@@ -49,7 +49,7 @@ All string manipulations
 
  ## DOM
 
- - **toImageSource(src: string | File )**
+ - `toImageSource(src: string | File )`
  Most of the time that we have an `img` tag there is a condition for getting `src` attribute from `url` or `blob` at the same
  place.
 
@@ -63,7 +63,7 @@ All string manipulations
 
  ## Objects and Arrays
 
-   - **objectsDiff(changed: Object, base: Object)**
+   - `objectsDiff(changed: Object, base: Object)`
    This function compares two objects and returns the changes
 
 ```javascript
@@ -86,7 +86,7 @@ objectsDiff(changed, base)
 
 ## Interceptors
 
- - **fetchJsonRes(res: Response)**
+ - `fetchJsonRes(res: Response)`
 
 ```javascript
 import {fetchJsonRes, combineURLs} from "onstage-js-utilities";
