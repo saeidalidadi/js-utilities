@@ -1,4 +1,5 @@
-import { combineURLs, objectsDiff } from "../src";
+import { combineURLs, fetchJsonRes, objectsDiff } from "../src";
+import fetchMock from "jest-fetch-mock";
 
 describe("Strings", () => {
     describe('combineURLs', () => {
@@ -37,5 +38,25 @@ describe('Objects & Arrays', () => {
         const result = objectsDiff(changed, base)
 
         expect(result).toMatchObject({ type: "orders" })
+    });
+});
+
+
+describe('Parsers', () => {
+    test('Should return JSON if the response is in JSON format.', async () => {
+        const data = { naem: "John" }
+        fetchMock.mockResponseOnce(JSON.stringify(data))
+
+        const result = await fetch("/api")
+        const jsonObject = await fetchJsonRes(result)
+        expect(jsonObject).toMatchObject(data)
+    });
+
+    test('Should throw Error if the response is a text.', async () => {
+        fetchMock.mockResponseOnce("ok")
+
+        const res = await fetch("/api")
+        await expect(async () => await fetchJsonRes(res)).rejects.toThrow(Error)
+
     });
 });

@@ -17,14 +17,15 @@ export const combineURLs = (baseURL: string, relativeURL: string): string => {
 }
 
 /**
- * get response of fetch always as json object. 
+ * get response of fetch always as json object.
+ * https://stackoverflow.com/questions/37121301/how-to-check-if-the-response-of-a-fetch-is-a-json-object-in-javascript
  */
-export const fetchResponse = async (response: any) => {
+export const fetchJsonRes = async (response: any) => {
     try {
         let text = await response.text()
         return await JSON.parse(text);
-    } catch (err) {
-        throw err
+    } catch (err: any) {
+        throw new Error("The response data is not as JSON format(" + err.message + ")")
     }
 }
 
@@ -55,7 +56,7 @@ export const getTimeZone = (): string => {
  * @param {string|Object} src - the remote url or local image file
  * @return {string}
  */
-export const toImageSource = (src: string | File): string =>  {
+export const toImageSource = (src: string | File): string => {
     return typeof src === 'string' ? src : URL.createObjectURL(src);
 }
 
@@ -67,13 +68,13 @@ export const toImageSource = (src: string | File): string =>  {
  * @param  {Object} base   Object to compare with
  * @return {Object}        Return a new object who represent the diff
  */
- export const objectsDiff = (object: any, base: any) => {
-	function changes(object: any, base: any) {
-		return _transform(object, function(result: any, value, key) {
-			if (!_isEqual(value, base[key])) {
-				result[key] = (_isObject(value) && _isObject(base[key])) ? changes(value, base[key]) : value;
-			}
-		});
-	}
-	return changes(object, base);
+export const objectsDiff = (object: any, base: any) => {
+    function changes(object: any, base: any) {
+        return _transform(object, function (result: any, value, key) {
+            if (!_isEqual(value, base[key])) {
+                result[key] = (_isObject(value) && _isObject(base[key])) ? changes(value, base[key]) : value;
+            }
+        });
+    }
+    return changes(object, base);
 }

@@ -1,4 +1,18 @@
-## Strings
+## Installation
+
+**npm**
+```
+npm i onstage-js-utils
+
+```
+
+**yarn**
+```
+yarn add onstage-js-utils
+
+```
+
+## String
 
 All string manipulations
 
@@ -68,3 +82,22 @@ const changed = {
 
 objectsDiff(changed, base)
 // { type: "orders" }
+```
+
+
+## Interceptors
+
+### fetchJsonRes
+
+```javascript
+import {fetchJsonRes, combineURLs} from "onstage-js-utilities";
+
+fetch(combineURLs(HOST, "users"))
+    .then(fetchJsonRes)
+    .then(json => {
+        // json data
+    })
+    .catch(err => {
+        // when the data is not json
+    })
+```
