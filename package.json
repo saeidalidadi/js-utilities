@@ -1,6 +1,6 @@
 {
   "name": "onstage-js-utils",
-  "version": "1.7.3",
+  "version": "1.7.4",
   "description": "My utilities for DRY coding on javascript land",
   "main": "./dist/index.js",
   "author": "Saeid Alidadi",
@@ -12,8 +12,7 @@
     "url": "git+https://github.com/saeidalidadi/js-utilities.git"
   },
   "scripts": {
-    "prepublish": "npm run build",
-    
+    "prepublishOnly": "npm run build",
     "prebuild": "rimraf dist",
     "test": "jest",
     "build": "tsc -p tsconfig.build.json"
