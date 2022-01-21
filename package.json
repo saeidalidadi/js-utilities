@@ -1,6 +1,6 @@
 {
   "name": "onstage-js-utils",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "My utilities for DRY coding on javascript land",
   "main": "./dist/index.js",
   "author": "Saeid Alidadi",
@@ -32,5 +32,16 @@
     "lodash.isequal": "^4.5.0",
     "lodash.isobject": "^3.0.2",
     "lodash.transform": "^4.6.0"
-  }
+  },
+  "keywords": [
+    "utilities",
+    "javascript",
+    "typescript",
+    "node.js",
+    "dom",
+    "object",
+    "string",
+    "common",
+    "npm"
+  ]
 }
