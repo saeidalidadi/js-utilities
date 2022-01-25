@@ -1,5 +1,6 @@
-import { combineURLs, fetchJsonRes, objectsDiff } from "../src";
+import { combineURLs, delay, fetchJsonRes, objectsDiff } from "../src";
 import fetchMock from "jest-fetch-mock";
+
 
 describe("Strings", () => {
     describe('combineURLs', () => {
@@ -60,3 +61,14 @@ describe('Parsers', () => {
 
     });
 });
+
+describe("Timers & Delay", () => {
+    describe("Delay", () => {
+        test('should delay procedure for 1 second', async () => {
+            jest.spyOn(global, 'setTimeout')
+            await delay(1000)
+            expect(setTimeout).toHaveBeenCalledTimes(1);
+            expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 1000)
+        });
+    })
+})

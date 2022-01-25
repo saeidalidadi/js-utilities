@@ -100,3 +100,16 @@ fetch(combineURLs(HOST, "users"))
         // when the data is not json
     })
 ```
+
+## Timers and Delay
+
+  - `delay(ms: number)` creates a delay for async procedures
+  
+  ```javascript
+  import { delay } from "onstage-js-utilities";
+
+  async () => {
+    await delay(1500)
+    // after 1500 milliseconds and more
+  }
+  ```

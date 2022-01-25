@@ -78,3 +78,18 @@ export const objectsDiff = (object: any, base: any) => {
     }
     return changes(object, base);
 }
+
+/**
+ * Delay event loop
+ * @param {number} ms - waiting duration as milliseconds
+ */
+export const delay = (ms: number) => {
+    return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+/**
+ * Creates delay with random durations
+ * @param range : the range or max for random durtions;
+ */
+export const randomDelay = async (range: number[] | number = 1) => {
+}
