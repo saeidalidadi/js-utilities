@@ -91,5 +91,13 @@ export const delay = (ms: number) => {
  * Creates delay with random durations
  * @param range : the range or max for random durtions;
  */
-export const randomDelay = async (range: number[] | number = 1) => {
+export const randomDelay = async (range: number[] | number = 1000) => {
+    let randomMS;
+    if(typeof range === 'number') {
+        randomMS = Math.round(Math.random() * range);
+    } else {
+        randomMS = Math.floor(Math.random() * (range[1] - range[0]) + range[0]);
+    }
+    return await delay(randomMS);
 }
+

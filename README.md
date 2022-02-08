@@ -113,3 +113,12 @@ fetch(combineURLs(HOST, "users"))
     // after 1500 milliseconds and more
   }
   ```
+  - `randomDelay(range: number | [number, number])` delay process between `min` and `max` numbers
+  ```javascript
+  import { randomDelay } from "onstage-js-utilities";
+
+  async () => {
+    await randomDelay(2000) // between 0 - 2000
+    await randomDelay([1000, 3000]) // between 1000 - 3000
+  }
+  ```
