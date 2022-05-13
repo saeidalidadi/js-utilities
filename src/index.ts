@@ -17,6 +17,25 @@ export const combineURLs = (baseURL: string, relativeURL: string): string => {
 }
 
 /**
+ * Replace other chars with `_`
+ * @param {string} str with not letter chars
+ * @returns {string} with `_`
+ */
+export const withUnderscore = (str: string): string => {
+    let parts = str.split('');
+    let currentWord = '';
+    for (let i = 0; i < parts.length; i++) {
+        let charCode = parts[i].toUpperCase().charCodeAt(0);
+        if (charCode <= 90 && 65 <= charCode) {
+            currentWord = currentWord.concat(parts[i])
+        } else {
+            currentWord = currentWord.concat('_');
+        }
+    }
+    return currentWord;
+}
+
+/**
  * get response of fetch always as json object.
  * https://stackoverflow.com/questions/37121301/how-to-check-if-the-response-of-a-fetch-is-a-json-object-in-javascript
  */
@@ -93,7 +112,7 @@ export const delay = (ms: number) => {
  */
 export const randomDelay = async (range: number[] | number = 1000) => {
     let randomMS;
-    if(typeof range === 'number') {
+    if (typeof range === 'number') {
         randomMS = Math.round(Math.random() * range);
     } else {
         randomMS = Math.floor(Math.random() * (range[1] - range[0]) + range[0]);

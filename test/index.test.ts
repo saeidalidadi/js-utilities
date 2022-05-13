@@ -1,4 +1,4 @@
-import { combineURLs, delay, fetchJsonRes, objectsDiff } from "../src";
+import { combineURLs, delay, fetchJsonRes, objectsDiff, withUnderscore } from "../src";
 import fetchMock from "jest-fetch-mock";
 
 
@@ -22,6 +22,17 @@ describe("Strings", () => {
             expect(result).toEqual("http://test.pass/this/test");
         });
     });
+    describe("Namings", () => {
+        test("Should split string with `_`.", () => {
+            let result = withUnderscore("onstage-js-utils");
+
+            expect(result.split('_')).toHaveLength(3);
+
+            result = withUnderscore("onstage.js.utils");
+
+            expect(result.split('_')).toHaveLength(3);
+        })
+    })
 })
 
 describe('Objects & Arrays', () => {

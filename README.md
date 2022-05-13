@@ -24,6 +24,17 @@ All string manipulations
  combineURLs("https://example.com", "users")   // output: https://example.com/users
  combineURLs("https://example.com", "//users") // output: https://example.com/users
  ```
+
+- `withUnderscore()`
+ Replaces strings seperator with `_`.
+
+ ```javascript
+ withUnderscore('onstage-js-utils'); // onstage_js_utils
+ withUnderscore('onstage.js.utils'); // onstage_js_utils
+ withUnderscore('onstage.js-utils'); // onstage_js_utils
+
+ ```
+
 ## Localization
 
  - `getLocale`
