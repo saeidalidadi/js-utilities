@@ -22,17 +22,9 @@ export const combineURLs = (baseURL: string, relativeURL: string): string => {
  * @returns {string} with `_`
  */
 export const withUnderscore = (str: string): string => {
-    let parts = str.split('');
-    let currentWord = '';
-    for (let i = 0; i < parts.length; i++) {
-        let charCode = parts[i].toUpperCase().charCodeAt(0);
-        if (charCode <= 90 && 65 <= charCode) {
-            currentWord = currentWord.concat(parts[i])
-        } else {
-            currentWord = currentWord.concat('_');
-        }
-    }
-    return currentWord;
+    let pattern = /[^a-z0-9]+|\s+/gmi;
+    let result = str.replace(pattern, "_");
+    return result;
 }
 
 /**
