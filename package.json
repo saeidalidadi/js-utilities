@@ -1,6 +1,6 @@
 {
   "name": "onstage-js-utils",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "description": "My utilities for DRY coding on javascript land",
   "main": "./dist/index.js",
   "author": "Saeid Alidadi",
