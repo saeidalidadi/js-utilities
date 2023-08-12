@@ -112,3 +112,14 @@ export const randomDelay = async (range: number[] | number = 1000) => {
     return await delay(randomMS);
 }
 
+/**
+ * Create ranges between tow numbers or characters
+ * @param start the starting point number
+ * @param end
+ */
+export const range = (start: number, end: number): Array<number> => {
+    if(start > end) {
+        throw new Error("starting number should be less than end number")
+    }
+    return Array.from({length: end  - start}, (value, index) => start + index)
+}
