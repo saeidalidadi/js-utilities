@@ -133,3 +133,13 @@ fetch(combineURLs(HOST, "users"))
     await randomDelay([1000, 3000]) // between 1000 - 3000
   }
   ```
+
+## Ranges
+- `range(start: number, end: number)` creates an array of numbers between start and end, excluding the end.
+```javascript
+import { range } from "onstage-js-utilities";
+
+range(1, 5)
+
+// [1, 2, 3, 4]
+```
