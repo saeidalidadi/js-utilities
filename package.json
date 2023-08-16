@@ -3,6 +3,7 @@
   "version": "1.13.0",
   "description": "My utilities for DRY coding on javascript land",
   "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Saeid Alidadi",
   "engines": {
     "node": ">=4"
