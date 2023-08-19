@@ -123,3 +123,22 @@ export const range = (start: number, end: number): Array<number> => {
     }
     return Array.from({length: end  - start}, (value, index) => start + index)
 }
+
+/**
+ * Create ranges between tow numbers or characters
+ * @param start the starting point letter
+ * @param end the ending point letter(inclusive)
+ */
+export const rangeLetters = (start: string, end: string) => {
+    const letters = [
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+        'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+        's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+    ];
+    
+    let sli = letters.indexOf(start);
+    let eli = letters.indexOf(end);
+    let res =  letters.filter((letter, index) => index <= sli || eli >= index);
+
+    return res;    
+}

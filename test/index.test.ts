@@ -1,4 +1,4 @@
-import { combineURLs, delay, fetchJsonRes, objectsDiff, range, withUnderscore } from "../src";
+import { combineURLs, delay, fetchJsonRes, objectsDiff, range, rangeLetters, withUnderscore } from "../src";
 import fetchMock from "jest-fetch-mock";
 
 
@@ -88,5 +88,10 @@ describe("Ranges", () => {
     it("Should return an array of numbers between two numbers including start point", () => {
         const numbers = range(1, 5);
         expect(numbers).toEqual([1, 2, 3, 4])
+    })
+
+    it("Should return characters between tow letters", () => {
+        const letters = rangeLetters('a', 'd');
+        expect(letters).toEqual(['a', 'b', 'c', 'd']);
     })
 })

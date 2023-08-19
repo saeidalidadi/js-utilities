@@ -143,3 +143,12 @@ range(1, 5)
 
 // [1, 2, 3, 4]
 ```
+
+- `rangeLetters(start: string, end: string)` return an array of letters(lowercase) between start and end, including the end.
+```javascript
+import { rangeLetters } from "onstage-js-utilities";
+
+rangeLetters('a', 'e')
+
+// ['a', 'b', 'c', 'd', 'e']
+```
