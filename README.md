@@ -1,6 +1,6 @@
 I was listening to [this beautiful piece 🎻](https://open.spotify.com/track/2bwzPgxD3UTmiTFlTFjNgL?si=0a530294217044be)  while working on this.
 
-These package has been created under the functional paradigm in Javascript.
+This package has been created under the functional paradigm in Javascript.
 It means to be more `declarative over imperative`.
 
 
