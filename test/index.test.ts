@@ -6,6 +6,7 @@ import {
     range,
     rangeLetters,
     withUnderscore,
+    toSnakeCase,
 } from "../src";
 import fetchMock from "jest-fetch-mock";
 
@@ -38,6 +39,12 @@ describe("Strings", () => {
             result = withUnderscore("onstage.js.utils");
 
             expect(result.split("_")).toHaveLength(3);
+        });
+
+        test("Should convert camelCase strings to snake_case", () => {
+            const camelCase = "goIntoHole";
+            const snake_case = toSnakeCase(camelCase);
+            expect(snake_case).toEqual("go_into_hole");
         });
     });
 });

@@ -27,6 +27,10 @@ export const withUnderscore = (str: string): string => {
     return result;
 };
 
+/** Convert camelCase to snake_case */
+export const toSnakeCase = (camelCase: string) => {
+    return camelCase.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
+};
 /**
  * get response of fetch always as json object.
  * https://stackoverflow.com/questions/37121301/how-to-check-if-the-response-of-a-fetch-is-a-json-object-in-javascript
