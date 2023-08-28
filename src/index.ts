@@ -27,7 +27,9 @@ export const withUnderscore = (str: string): string => {
     return result;
 };
 
-/** Convert camelCase to snake_case */
+/** Convert camelCase to snake_case
+ * @param {string} camelCase
+ */
 export const toSnakeCase = (camelCase: string) => {
     return camelCase.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
 };

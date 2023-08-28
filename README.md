@@ -50,6 +50,21 @@ All string manipulations
 
  ```
 
+- `toSnakeCase()` 
+The most reasonable use case could be converting keys of request data 
+to snake cases on saving to database.
+
+```javascript
+import {toSnakeCase} from "onstate-js-utils";
+
+const snakedCase = Object
+                .keys(data)
+                .reduce((acc, key) => {
+                    acc[toSnakeCase(key)] = data[key];
+                    return acc;
+                }, {});
+```
+
 ## Localization
 
  - `getLocale`
