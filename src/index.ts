@@ -7,6 +7,7 @@ import _isObject from "lodash.isobject";
  * @param {string} baseURL - like "http://example.com/"
  * @param {string} relativeURL - like "/users"
  * @returns {string} url - combined URL
+ * @deprecated
  */
 
 export const combineURLs = (baseURL: string, relativeURL: string): string => {
@@ -14,6 +15,14 @@ export const combineURLs = (baseURL: string, relativeURL: string): string => {
         ? baseURL.replace(/\/+$/, "") + "/" + relativeURL.replace(/^\/+/, "")
         : baseURL;
     return url;
+};
+
+/**
+ * An alias for combineURLs
+ *
+ */
+export const concatURLs = (...args: [string, string]) => {
+    return combineURLs.apply(null, args);
 };
 
 /**

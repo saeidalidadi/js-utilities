@@ -7,6 +7,7 @@ import {
     rangeLetters,
     withUnderscore,
     toSnakeCase,
+    concatURLs,
 } from "../src";
 import fetchMock from "jest-fetch-mock";
 
@@ -28,6 +29,17 @@ describe("Strings", () => {
             const result = combineURLs("http://test.pass/", "/this/test");
 
             expect(result).toEqual("http://test.pass/this/test");
+        });
+    });
+
+    // This method is an alias for combineURLs
+    // also will support www url addresses with protocols
+    describe("concatURLs", () => {
+        test("Should concat two parts when second part starts with slash", () => {
+            const partOne = "http://one.me/";
+            const partTwo = "/two/me";
+            const result = concatURLs(partOne, partTwo);
+            expect(result).toBe("http://one.me/two/me");
         });
     });
     describe("Namings", () => {

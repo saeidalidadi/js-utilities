@@ -29,16 +29,18 @@ yarn add onstage-js-utils
 
 All string manipulations
 
-- `combineURLs`
- This function will concat your base URL to any path you want without any fear of double slashes `//`
+- `concatURLs`
+ This function will concatenate your base URL to any path you want without any fear of double slashes `//`
 
  ```javascript
- import { combineURLs } from "onstage-js-utils";
+ import { concatURLs } from "onstage-js-utils";
 
- combineURLs("https://example.com/", "/users") // output: https://example.com/users
- combineURLs("https://example.com", "users")   // output: https://example.com/users
- combineURLs("https://example.com", "//users") // output: https://example.com/users
+ concatURLs("https://example.com/", "/users") // output: https://example.com/users
+ concatURLs("https://example.com", "users")   // output: https://example.com/users
+ concatURLs("https://example.com", "//users") // output: https://example.com/users
  ```
+- `combineURLs`
+This function is deprecated version of `concatURLs`
 
 - `withUnderscore()`
  Replaces strings seperator with `_`.
@@ -130,9 +132,9 @@ objectsDiff(changed, base)
  - `fetchJsonRes(res: Response)`
 
 ```javascript
-import {fetchJsonRes, combineURLs} from "onstage-js-utilities";
+import {fetchJsonRes, concatURLs} from "onstage-js-utilities";
 
-fetch(combineURLs(HOST, "users"))
+fetch(concatURLs(HOST, "users"))
     .then(fetchJsonRes)
     .then(json => {
         // json data
