@@ -8,6 +8,7 @@ import {
     withUnderscore,
     toSnakeCase,
     concatURLs,
+    withQueries,
 } from "../src";
 import fetchMock from "jest-fetch-mock";
 
@@ -40,6 +41,17 @@ describe("Strings", () => {
             const partTwo = "/two/me";
             const result = concatURLs(partOne, partTwo);
             expect(result).toBe("http://one.me/two/me");
+        });
+    });
+    describe("Queries", () => {
+        test("Should append query strings to end of URL path", () => {
+            let result = withQueries("/this-is-my-path", "name=John");
+            expect(result).toEqual("/this-is-my-path?name=John");
+        });
+
+        test("Should append query strings to end of URL that already has some query strings", () => {
+            let result = withQueries("/someone?name=John", "age=24");
+            expect(result).toEqual("/someone?name=John&age=24");
         });
     });
     describe("Namings", () => {

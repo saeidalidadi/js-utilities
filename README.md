@@ -42,6 +42,16 @@ All string manipulations
 - `combineURLs`
 This function is deprecated version of `concatURLs`
 
+- `withQueries`
+Append query strings to end of URLs
+
+```javascript
+import { withQueries } from "onstage-js-utils";
+
+const url = withQueries("/someone", "name=John") // /someone?name=John
+withQueries(url, "age=34") // /someone?name=John&age=34
+```
+
 - `withUnderscore()`
  Replaces strings seperator with `_`.
 

@@ -26,6 +26,15 @@ export const concatURLs = (...args: [string, string]) => {
 };
 
 /**
+ * @param {string} url A URL that may have query string or not
+ * @param {string} queries string of queries to append that URL
+ * @return {string}
+ */
+export const withQueries = (url: string, queries: string) => {
+    return `${url}${url.split("?").length === 1 ? "?" : "&"}${queries}`;
+};
+
+/**
  * Replace other chars with `_`
  * @param {string} str with not letter chars
  * @returns {string} with `_`
