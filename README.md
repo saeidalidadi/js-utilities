@@ -50,6 +50,9 @@ import { withQueries } from "onstage-js-utils";
 
 const url = withQueries("/someone", "name=John") // /someone?name=John
 withQueries(url, "age=34") // /someone?name=John&age=34
+
+const url = withQueries('/someone', {name: 'John', age: 33}) // /someone?name=John&age=33
+
 ```
 
 - `withUnderscore()`
