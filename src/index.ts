@@ -30,8 +30,14 @@ export const concatURLs = (...args: [string, string]) => {
  * @param {string} queries string of queries to append that URL
  * @return {string}
  */
-export const withQueries = (url: string, queries: string) => {
-    return `${url}${url.split("?").length === 1 ? "?" : "&"}${queries}`;
+export const withQueries = (url: string, queries: string | Record<string, any>): string => {
+    let finalQueries = queries;
+    if (typeof queries == "object") {
+        finalQueries = Object.keys(queries)
+            .map((prop) => `${prop}=${queries[prop]}`)
+            .join("&");
+    }
+    return `${url}${url.split("?").length === 1 ? "?" : "&"}${finalQueries}`;
 };
 
 /**

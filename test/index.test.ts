@@ -53,6 +53,11 @@ describe("Strings", () => {
             let result = withQueries("/someone?name=John", "age=24");
             expect(result).toEqual("/someone?name=John&age=24");
         });
+
+        test("Should append query strings from an object", () => {
+            let result = withQueries("/someone", { age: 33, name: "John" });
+            expect(result).toEqual("/someone?age=33&name=John");
+        });
     });
     describe("Namings", () => {
         test("Should split string with `_`.", () => {
