@@ -1,6 +1,6 @@
 {
   "name": "onstage-js-utils",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "My utilities for DRY coding on javascript land",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
